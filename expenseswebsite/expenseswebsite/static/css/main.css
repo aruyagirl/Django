@@ -12,6 +12,11 @@
     }
   }
 
+  .showPasswordToggle{
+    cursor:pointer;
+    transition: all;
+  }
+
   .b-example-divider {
     width: 100%;
     height: 3rem;

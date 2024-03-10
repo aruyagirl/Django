@@ -19,7 +19,7 @@ environ.Env.read_env(env_file='.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+from django.contrib import messages
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
@@ -132,3 +132,7 @@ STATIC_ROOT=os.path.join(BASE_DIR,'static')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MESSAGE_TAGS={
+    messages.ERROR:'danger'
+}
