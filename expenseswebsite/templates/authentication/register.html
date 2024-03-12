@@ -25,6 +25,7 @@
                             placeholder="Username"
                             id="usernameField" 
                             class="form-control form-control-sm"
+                            value="{{fieldValues.username}}"
                         />
                     </div>
                     <div class="invalid-username invalid-feedback" style="display:none"> </div>
@@ -37,6 +38,7 @@
                             placeholder="Email"
                             id="emailField" 
                             class="form-control form-control-sm"
+                            value="{{fieldValues.email}}"
                         />
                     <div class="invalid-email invalid-feedback" style="display:none"> </div>
                     <p class="text.sm text-success emailSuccessOutput"></p> 
@@ -57,7 +59,7 @@
                         </div>
                     </div>
                     <div class="text-center">
-                        <input type="submit" value="Register" class="btn btn-primary" />
+                        <input type="submit" value="Register" class="btn btn-primary submit-btn" />
                     </div>
                 </form>
             </div>

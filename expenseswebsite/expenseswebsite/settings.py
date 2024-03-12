@@ -25,7 +25,7 @@ from django.contrib import messages
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-fwa5j=75@(9%fo6u4ov&x(m7-6opp8ntb#9g*)$8p%43a*hip7'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -136,3 +136,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MESSAGE_TAGS={
     messages.ERROR:'danger'
 }
+
+# Email setup
+EMAIL_HOST: env['EMAIL_HOST']
+EMAIL_HOST_USER: env['EMAIL_HOST_USER']
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL: env['EMAIL_HOST_USER']
+EMAIL_PORT: 587
+EMAIL_HOST_PASWORD: env['EMAIL_HOST_PASSWORD']
