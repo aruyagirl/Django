@@ -1,0 +1,15 @@
+#header {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px 10px;
+    background: #567990;
+    color: #ffc;
+}
+
+#branding h1{
+    color: #ffffff;
+}
+

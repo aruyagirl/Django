@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<div class="container mt-4">
+    <div class="row">
+        <div class='col-md-10'>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'expenses' %}">Expenses</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Edit expense</li>
+                </ol>
+            </nav>
+        </div>
+        <div class='col-md-2'>
+            <a href="{% url 'expense-delete' expense.id %}" class="btn btn-danger">Delete</a> 
+        </div>
+    </div>
+
+    <form action="{% url 'expense-edit' expense.id %}" method="post" class="pt-3">
+        {% include 'partials/_messages.html' %}
+        {% csrf_token %}
+        <div class="card">
+            <div class="card-body">
+                <div class="form-group mb-3">
+                    <label for="amount" class="form-label">Amount</label>
+                    <input 
+                        type="text" 
+                        class="form-control-sm" 
+                        id="amount" 
+                        name="amount" 
+                        value="{{values.amount}}">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="description" class="form-label">Description</label>
+                    <input 
+                        type="text" 
+                        class="form-control-sm" 
+                        id="description" 
+                        name="description"
+                        value="{{values.description}}">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="category" class="form-label">Category</label>
+                    <select name="category" id="category" class="form-control-sm">
+                        <option selected ame='category' value = '{{values.category}}'>{{values.category}}</option>
+
+                        {% for category in categories %}
+                        <option name='category' value = '{{category.name}}'>{{category.name}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="expense_date" class="form-label">Date</label>
+                    <input 
+                        type="date" 
+                        class="form-control-sm" 
+                        id="expense_date" 
+                        name="expense_date"
+                        value="{{values.expense_date | date:'Y-m-d'}}">
+                </div>
+                <button type="submit" value="Save" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

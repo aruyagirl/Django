@@ -69,7 +69,7 @@ emailField.addEventListener('keyup', (e) => {
                 emailfeedBackArea.innerHTML=`<p>${data.email_error}</p>`;
             } else {
                 // Remove error state without showing success message
-                submitBtn.removeAttribute("disabled")
+                submitBtn.removeAttribute("disabled");
                 emailField.classList.remove('is-invalid');
                 emailfeedBackArea.style.display = 'none';
             }

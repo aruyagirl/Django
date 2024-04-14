@@ -713,11 +713,11 @@ progress {
 
 .blockquote {
   margin-bottom: 1rem;
-  font-size: calc(1.2625rem + 0.15vw);
+  font-size: calc(0.875rem + 0.15vw);
 }
 @media (min-width: 1200px) {
   .blockquote {
-    font-size: 1.375rem;
+    font-size: 0.875rem;
   }
 }
 .blockquote > :last-child {
@@ -1900,9 +1900,11 @@ progress {
   --bs-table-hover-bg: rgba(var(--bs-emphasis-color-rgb), 0.075);
   width: 100%;
   margin-bottom: 1rem;
+  margin-top: 2rem;
   vertical-align: top;
   border-color: var(--bs-table-border-color);
 }
+
 .table > :not(caption) > * > * {
   padding: 0.5rem 0.5rem;
   color: var(--bs-table-color-state, var(--bs-table-color-type, var(--bs-table-color)));
@@ -1918,7 +1920,7 @@ progress {
 }
 
 .table-group-divider {
-  border-top: calc(var(--bs-border-width) * 2) solid currentcolor;
+  border-top: calc(var(--bs-border-width) * 2) solid var(--bs-table-border-color);
 }
 
 .caption-top {
@@ -1961,6 +1963,14 @@ progress {
 .table-hover > tbody > tr:hover > * {
   --bs-table-color-state: var(--bs-table-hover-color);
   --bs-table-bg-state: var(--bs-table-hover-bg);
+}
+
+.table-wrapper {
+  width: 100%; 
+}
+
+.table-wrapper table {
+  width: 100%; 
 }
 
 .table-primary {
@@ -2112,6 +2122,7 @@ progress {
 }
 .form-label {
   margin-bottom: 0.5rem;
+  font-size: 0.875rem;
 }
 
 .col-form-label {
@@ -2125,11 +2136,11 @@ progress {
 .col-form-label-lg {
   padding-top: calc(0.5rem + var(--bs-border-width));
   padding-bottom: calc(0.5rem + var(--bs-border-width));
-  font-size: calc(1.2625rem + 0.15vw);
+  font-size: calc(0.875rem + 0.15vw);
 }
 @media (min-width: 1200px) {
   .col-form-label-lg {
-    font-size: 1.375rem;
+    font-size: 0.875rem;
   }
 }
 
@@ -2149,7 +2160,7 @@ progress {
   display: block;
   width: 100%;
   padding: 0.5rem 1.1rem;
-  font-size: 1.1rem;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
   color: var(--bs-body-color);
@@ -2270,15 +2281,12 @@ progress {
 .form-control-sm {
   min-height: calc(1.5em + 0.5rem + calc(var(--bs-border-width) * 2));
   padding: 0.25rem 0.5rem;
-  font-size: 0.9625rem;
+  font-size: 0.875rem; /* Reduced font size */
   border-radius: var(--bs-border-radius-sm);
+  width: 100%
 }
-.form-control-sm::-webkit-file-upload-button {
-  padding: 0.25rem 0.5rem;
-  margin: -0.25rem -0.5rem;
-  -webkit-margin-end: 0.5rem;
-  margin-inline-end: 0.5rem;
-}
+
+.form-control-sm::-webkit-file-upload-button,
 .form-control-sm::file-selector-button {
   padding: 0.25rem 0.5rem;
   margin: -0.25rem -0.5rem;
@@ -2286,15 +2294,16 @@ progress {
   margin-inline-end: 0.5rem;
 }
 
+
 .form-control-lg {
   min-height: calc(1.5em + 1rem + calc(var(--bs-border-width) * 2));
   padding: 0.5rem 1rem;
-  font-size: calc(1.2625rem + 0.15vw);
+  font-size: calc(0.875rem + 0.15vw);
   border-radius: var(--bs-border-radius-lg);
 }
 @media (min-width: 1200px) {
   .form-control-lg {
-    font-size: 1.375rem;
+    font-size: 0.875rem;
   }
 }
 .form-control-lg::-webkit-file-upload-button {
@@ -2348,7 +2357,7 @@ textarea.form-control-lg {
   display: block;
   width: 100%;
   padding: 0.5rem 3.3rem 0.5rem 1.1rem;
-  font-size: 1.1rem;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
   color: var(--bs-body-color);
@@ -2390,7 +2399,7 @@ textarea.form-control-lg {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   padding-left: 0.5rem;
-  font-size: 0.9625rem;
+  font-size: 0.875rem;
   border-radius: var(--bs-border-radius-sm);
 }
 
@@ -2398,12 +2407,12 @@ textarea.form-control-lg {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
-  font-size: calc(1.2625rem + 0.15vw);
+  font-size: calc(0.875rem + 0.15vw);
   border-radius: var(--bs-border-radius-lg);
 }
 @media (min-width: 1200px) {
   .form-select-lg {
-    font-size: 1.375rem;
+    font-size: 0.875rem;
   }
 }
 
@@ -2775,7 +2784,7 @@ textarea.form-control-lg {
   display: flex;
   align-items: center;
   padding: 0.5rem 1.1rem;
-  font-size: 1.1rem;
+  font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.5;
   color: var(--bs-body-color);
@@ -2791,7 +2800,7 @@ textarea.form-control-lg {
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn {
   padding: 0.5rem 1rem;
-  font-size: calc(1.2625rem + 0.15vw);
+  font-size: calc(0.875rem + 0.15vw);
   border-radius: var(--bs-border-radius-lg);
 }
 @media (min-width: 1200px) {
@@ -2799,7 +2808,7 @@ textarea.form-control-lg {
   .input-group-lg > .form-select,
   .input-group-lg > .input-group-text,
   .input-group-lg > .btn {
-    font-size: 1.375rem;
+    font-size: 0.875rem;
   }
 }
 
@@ -3400,12 +3409,12 @@ textarea.form-control-lg {
 .btn-lg, .btn-group-lg > .btn {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
-  --bs-btn-font-size: calc(1.2625rem + 0.15vw);
+  --bs-btn-font-size: calc(0.875rem + 0.15vw);
   --bs-btn-border-radius: 2.688em;
 }
 @media (min-width: 1200px) {
   .btn-lg, .btn-group-lg > .btn {
-    --bs-btn-font-size: 1.375rem;
+    --bs-btn-font-size: 0.875rem;
   }
 }
 
@@ -3485,7 +3494,7 @@ textarea.form-control-lg {
   --bs-dropdown-padding-x: 0;
   --bs-dropdown-padding-y: 0.5rem;
   --bs-dropdown-spacer: 0.125rem;
-  --bs-dropdown-font-size: 1.1rem;
+  --bs-dropdown-font-size: 0.875rem;
   --bs-dropdown-color: var(--bs-body-color);
   --bs-dropdown-bg: var(--bs-body-bg);
   --bs-dropdown-border-color: var(--bs-border-color-translucent);
@@ -4792,7 +4801,7 @@ textarea.form-control-lg {
 .pagination {
   --bs-pagination-padding-x: 0.75rem;
   --bs-pagination-padding-y: 0.375rem;
-  --bs-pagination-font-size: 1.1rem;
+  --bs-pagination-font-size: 0.875rem;
   --bs-pagination-color: var(--bs-link-color);
   --bs-pagination-bg: var(--bs-body-bg);
   --bs-pagination-border-width: var(--bs-border-width);
@@ -4872,12 +4881,12 @@ textarea.form-control-lg {
 .pagination-lg {
   --bs-pagination-padding-x: 1.5rem;
   --bs-pagination-padding-y: 0.75rem;
-  --bs-pagination-font-size: calc(1.2625rem + 0.15vw);
+  --bs-pagination-font-size: calc(0.875rem + 0.15vw);
   --bs-pagination-border-radius: var(--bs-border-radius-lg);
 }
 @media (min-width: 1200px) {
   .pagination-lg {
-    --bs-pagination-font-size: 1.375rem;
+    --bs-pagination-font-size: 0.875rem;
   }
 }
 
@@ -5009,6 +5018,7 @@ textarea.form-control-lg {
   --bs-alert-border-color: var(--bs-dark-border-subtle);
   --bs-alert-link-color: var(--bs-dark-text-emphasis);
 }
+
 
 @keyframes progress-bar-stripes {
   0% {
@@ -12078,7 +12088,7 @@ textarea.form-control-lg {
     font-size: 1.65rem !important;
   }
   .fs-5 {
-    font-size: 1.375rem !important;
+    font-size: 0.875rem !important;
   }
 }
 @media print {
