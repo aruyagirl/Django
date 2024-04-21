@@ -10,17 +10,17 @@
             }
         },
         {
-            "src": "build.sh",
-            "use":"@vercel/static-build",
-            "config":{
-                "distDir": "staticfiles"
+            "src": "expenseswebsite/static/(.*)",
+            "use": "@vercel/static",
+            "config": {
+                "basePath": "expenseswebsite/static"
             }
         }
     ],
     "routes": [
         {
-            "src":"/static/(.*)",
-            "dest":"/static/$1"
+            "src": "/static/(.*)",
+            "dest": "expenseswebsite/static/$1"
         },
         {
             "src": "/(.*)",
@@ -28,3 +28,4 @@
         }
     ]
 }
+
