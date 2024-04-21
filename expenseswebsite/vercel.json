@@ -26,12 +26,6 @@
             "src": "/(.*)",
             "dest": "expenseswebsite/wsgi.py"
         }
-    ],
-
-    "rewrites": [
-        {"source": "/static/(.*)", "destination": "/expenseswebsite/static/$1"},
-        {"source": "/(.*)", "destination": "/"}
     ]
-    
 }
 
